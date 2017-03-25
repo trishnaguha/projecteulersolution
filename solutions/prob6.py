@@ -2,14 +2,33 @@
 # Sum square difference of first 100 natural numbers
 
 import math
-N= 100
-sumofsq=0
-sq=0
-sum=0
-for i in range(1,N+1):
-	sq=i*i
-	sumofsq=sumofsq+sq
-	sum=sum+i
-diff=(sum*sum)-sumofsq
-print(diff)
 
+class sumSquareDiff(object):
+	
+	def __init__(self, number):
+        	self.number = number
+
+	def square(self, no):
+        	return no*no
+
+	def sum(self):
+		sum1=0
+		N = self.number
+        	for i in range(1,N+1):
+			sum1=sum1+i
+		return sum1
+	
+   	def sumofsquares(self):
+		sumofsquare=0
+        	N = self.number
+        	for i in range(1,N+1):
+			sumofsquare=sumofsquare+ self.square(i)
+		return sumofsquare
+
+		
+	def diff(self):
+		print(self.square(self.sum())-self.sumofsquares())
+		
+
+ob = sumSquareDiff(100)
+ob.diff()
